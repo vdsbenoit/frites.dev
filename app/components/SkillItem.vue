@@ -19,7 +19,7 @@
           :name="icon"
           :style="{ color: color ? color : '@apply text-neutral-300' }"
         />
-        <span v-else class="text-nowrap font-bold text-gray-300">{{ title }}</span>
+        <span v-else class="font-bold text-nowrap text-gray-300">{{ title }}</span>
       </div>
       <!-- Caption -->
       <div
@@ -46,7 +46,7 @@
     >
       <div class="flex items-center justify-between">
         <h4
-          class="text text-wrap rounded px-2 py-1 font-bold"
+          class="text rounded px-2 py-1 font-bold text-wrap"
           :style="{ backgroundColor: color ? color : '' }"
           :class="{
             'text-gray-800': color,
@@ -186,8 +186,8 @@ const clickOutsideDescription = (event: MouseEvent) => {
   if (thisComponent.value && thisComponent.value.contains(event.target as Node)) return
   hideDescription()
 }
-const onIntersectionObserver = ([{ isIntersecting }]: IntersectionObserverEntry[]) => {
-  if (isDescriptionDisplayed.value && !isIntersecting) hideDescription()
+const onIntersectionObserver = ([entry]: IntersectionObserverEntry[]) => {
+  if (entry && isDescriptionDisplayed.value && !entry.isIntersecting) hideDescription()
 }
 
 onMounted(() => {

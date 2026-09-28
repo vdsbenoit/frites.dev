@@ -3,7 +3,7 @@ import { defineNuxtConfig } from "nuxt/config"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2024-04-03",
+  compatibilityDate: "2026-09-29",
   devtools: { enabled: true },
   modules: [
     "@nuxt/ui",
@@ -78,14 +78,7 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: "build",
     tsConfig: {
-      include: ["types"],
-      compilerOptions: {
-        baseUrl: ".",
-        paths: {
-          "~/*": ["./*"],
-          "@/*": ["./*"],
-        },
-      },
+      include: ["../tests/**/*"],
     },
   },
 })

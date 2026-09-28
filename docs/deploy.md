@@ -1,4 +1,4 @@
-# Deploy 
+# Deploy
 
 Run the following command to build the project:`
 

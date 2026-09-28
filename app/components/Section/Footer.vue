@@ -3,10 +3,10 @@
     <UDivider size="xs">
       <SocialLinks class="mx-4 space-x-8" :black-and-white="true" />
     </UDivider>
-    <div class="relative mb-4 mt-4">
+    <div class="relative mt-4 mb-4">
       <div class="flex flex-col items-center justify-center space-y-3 text-gray-500">
         <!-- Left column: Logo, copyright, and brief about -->
-        <div class="flex flex-col items-center space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0">
+        <div class="flex flex-col items-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2">
           <img
             src="~/assets/img/logo-transparent.png"
             alt="company logo"

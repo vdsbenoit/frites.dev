@@ -20,8 +20,8 @@
 - Nuxt Security
 
 ## Lighthouse report
-![Lighthouse report](./docs/lighthouse-report.png)
 
+![Lighthouse report](./docs/lighthouse-report.png)
 
 ## Design
 

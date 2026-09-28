@@ -11,7 +11,7 @@
         <div class="flex w-full justify-center">
           <div>
             <div
-              class="w-0 overflow-hidden whitespace-nowrap bg-gradient-to-t from-gray-400 to-white bg-clip-text text-lg text-transparent sm:text-3xl lg:text-4xl xl:text-5xl"
+              class="w-0 overflow-hidden bg-gradient-to-t from-gray-400 to-white bg-clip-text text-lg whitespace-nowrap text-transparent sm:text-3xl lg:text-4xl xl:text-5xl"
               :class="{ 'typewriter-effect': isActive }"
             >
               with tailored
@@ -23,7 +23,7 @@
         </div>
       </h1>
       <div
-        class="focus:*:ring-primary-200 mt-8 grid grid-cols-1 justify-items-center gap-2 font-semibold *:w-48 *:rounded-lg *:py-2 *:text-center *:shadow-xl *:transition *:ease-in focus:*:outline-none focus:*:ring-2 motion-safe:hover:*:scale-110 sm:grid-cols-2 sm:justify-normal sm:gap-4 sm:*:w-52"
+        class="focus:*:ring-primary-200 mt-8 grid grid-cols-1 justify-items-center gap-2 font-semibold *:w-48 *:rounded-lg *:py-2 *:text-center *:shadow-xl *:transition *:ease-in focus:*:ring-2 focus:*:outline-none motion-safe:hover:*:scale-110 sm:grid-cols-2 sm:justify-normal sm:gap-4 sm:*:w-52"
       >
         <a
           href="#profile"

@@ -50,7 +50,7 @@
         <p class="mb-4 py-2" v-html="description"></p>
         <!-- Close button -->
         <div
-          class="absolute bottom-0 left-0 right-0 flex h-4 cursor-pointer items-center justify-center bg-gray-800 hover:bg-gray-700 active:shadow-inner active:shadow-gray-900"
+          class="absolute right-0 bottom-0 left-0 flex h-4 cursor-pointer items-center justify-center bg-gray-800 hover:bg-gray-700 active:shadow-inner active:shadow-gray-900"
           @click.stop="isDescriptionDisplayed = false"
         >
           <UIcon
@@ -68,7 +68,7 @@
       </div>
       <!-- Icon (absolute position, relative to content) -->
       <div
-        class="absolute -left-5 top-1/2 flex size-10 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full sm:scale-100"
+        class="absolute top-1/2 -left-5 flex size-10 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full sm:scale-100"
         :class="[
           { 'bg-primary': !icon },
           iconWrapperClass,
@@ -130,11 +130,9 @@ type AssetModule = {
 const imgPath = computedAsync(async () => {
   if (props.icon && props.icon.startsWith("~")) {
     const assets = import.meta.glob<AssetModule>("~/assets/img/**/*")
-    if (props.icon.slice(1) in assets) {
-      return await assets[props.icon.slice(1)]().then((module) => module.default)
-    } else {
-      throw new Error(`${props.icon} not found in ~/assets/`)
-    }
+    const loadAsset = assets[props.icon.slice(1)]
+    if (!loadAsset) throw new Error(`${props.icon} not found in ~/assets/`)
+    return (await loadAsset()).default
   } else return ""
 }, "")
 
@@ -157,8 +155,9 @@ const clickOutsideDescription = (event: MouseEvent) => {
   if (thisComponent.value?.contains(event.target as Node)) return
   isDescriptionDisplayed.value = false
 }
-const onIntersectionObserver = ([{ isIntersecting }]: IntersectionObserverEntry[]) => {
-  if (isDescriptionDisplayed.value && !isIntersecting) isDescriptionDisplayed.value = false
+const onIntersectionObserver = ([entry]: IntersectionObserverEntry[]) => {
+  if (entry && isDescriptionDisplayed.value && !entry.isIntersecting)
+    isDescriptionDisplayed.value = false
 }
 
 onMounted(() => {

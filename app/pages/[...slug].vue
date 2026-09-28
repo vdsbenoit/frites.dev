@@ -4,7 +4,7 @@
     <p class="text-xl">Page not found</p>
     <a
       href="/"
-      class="bg-primary-400 focus:ring-primary-200 hover:bg-primary-300 active:bg-primary-500 mt-4 inline-block rounded-lg px-4 py-2 text-center font-semibold text-gray-800 shadow-xl transition ease-in focus:outline-none focus:ring-2 motion-safe:hover:scale-110"
+      class="bg-primary-400 focus:ring-primary-200 hover:bg-primary-300 active:bg-primary-500 mt-4 inline-block rounded-lg px-4 py-2 text-center font-semibold text-gray-800 shadow-xl transition ease-in focus:ring-2 focus:outline-none motion-safe:hover:scale-110"
     >
       Go back home
     </a>
