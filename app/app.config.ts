@@ -25,5 +25,5 @@ export default defineAppConfig({
       ],
     },
   },
-  starDensity: 0.7,
+  friesDensity: 1.0,
 })

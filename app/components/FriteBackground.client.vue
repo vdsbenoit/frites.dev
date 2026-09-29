@@ -1,202 +1,125 @@
-<!-- This layout contains the animated stars background and the ellipse gradient background -->
+<!-- Flying fries filling their positioned parent. Each layer is rendered twice, one parent-height apart, so the upward loop is seamless. -->
 <template>
-  <div>
-    <!-- The following gradient color hex are equivalent to Tailwind's neutral-800 & neutral-950 -->
+  <div
+    ref="root"
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 transition-opacity duration-1000"
+    :class="isVisible ? 'opacity-100' : 'opacity-0'"
+    :style="{ '--fries-height': `${height}px` }"
+  >
     <div
-      id="background-ellipse"
-      class="fixed inset-0 -z-50 h-lvh w-lvw bg-cover"
-      style="background: radial-gradient(ellipse at bottom, #262626 0%, #0a0a0a 100%)"
-    ></div>
-    <div
-      v-for="(layer, indexLayer) in starLayers"
-      :id="`background-stars-layer-${indexLayer}`"
-      :key="indexLayer"
-      :class="{ 'blur-md': isBackgroundBlurred }"
-      class="fixed inset-0 -z-40 h-lvh w-lvw overflow-hidden transition duration-1000"
+      v-for="(layer, layerIndex) in layers"
+      :key="layerIndex"
+      class="absolute inset-0 overflow-hidden"
     >
       <div
-        v-for="(offset, indexOffset) in [0, bgStarHeight]"
-        :key="indexOffset"
-        :style="{
-          animation: prefersReducedMotion ? '' : `translateStar ${layer.speed}s linear infinite`,
-        }"
+        v-for="offset in [0, height]"
+        :key="offset"
+        class="absolute inset-0"
+        :style="{ animation: `fries-fall ${layer.duration}s linear infinite` }"
       >
-        <div
-          v-for="(star, indexStar) in layer.stars"
-          :key="indexStar"
-          class="pointer-events-none absolute transition duration-300"
+        <img
+          v-for="(fry, fryIndex) in layer.fries"
+          :key="fryIndex"
+          :src="friteUrl"
+          alt=""
+          class="absolute w-auto opacity-85"
           :style="{
-            top: star.top + offset + 'px',
-            left: star.left + 'px',
+            top: `${fry.top + offset}px`,
+            left: `${fry.left}px`,
+            height: `${layer.size}rem`,
+            animation: `fries-spin-${fry.direction} ${fry.spinDuration}s linear infinite`,
           }"
-          :class="{
-            'opacity-0': !isStarVisible,
-            'opacity-100': isStarVisible,
-          }"
-        >
-          <img
-            src="~/assets/img/frite-background.png"
-            alt="moving fry"
-            class="h-6 w-auto"
-            :style="{
-              height: `${layer.height}rem`,
-              animation:
-                prefersReducedMotion || !isStarRotating
-                  ? ''
-                  : `rotateStar-${star.rotationDirection} ${star.rotationSpeed}s linear infinite`,
-            }"
-          />
-        </div>
+        />
       </div>
     </div>
-    <slot />
   </div>
 </template>
+
 <script setup lang="ts">
-import { useDebounceFn, useEventListener, usePreferredReducedMotion } from "@vueuse/core"
+import { useDebounceFn, useEventListener, whenever } from "@vueuse/core"
+import friteUrl from "~/assets/img/frite-background.png"
 
-// Interfaces & Types
-
-interface Star {
+interface Fry {
   top: number
   left: number
-  rotationDirection: string
-  rotationSpeed: number
+  direction: "cw" | "ccw"
+  spinDuration: number
 }
 
-interface StarLayer {
-  stars: Star[]
-  speed: number // n seconds to cross the screen
-  height: number // in rem
+interface FriesLayer {
+  fries: Fry[]
+  duration: number // seconds to travel one parent height
+  size: number // rem
 }
 
-// Constants
-
+// Only regenerate on significant resizes (not when a mobile address bar collapses)
 const RESET_THRESHOLD_X = 0.1
 const RESET_THRESHOLD_Y = 0.2
 
-// Composables
-
 const appConfig = useAppConfig()
+const rootElement = useTemplateRef("root")
+const width = ref(0)
+const height = ref(0)
+const layers = ref<FriesLayer[]>([])
+const isVisible = ref(false)
 
-// Reactive variables
+const generateFries = (count: number): Fry[] =>
+  Array.from({ length: Math.round(count) }, () => ({
+    top: Math.floor(Math.random() * height.value),
+    left: Math.floor(Math.random() * width.value),
+    direction: Math.random() > 0.5 ? "cw" : "ccw",
+    spinDuration: Math.random() * 100 + 10,
+  }))
 
-const bgStarWidth = ref(0)
-const bgStarHeight = ref(0)
-const preferredMotion = usePreferredReducedMotion()
-const isBackgroundBlurred = useState("blurBackground", () => false)
-const isStarsEnabled = useCookie("is-stars-enabled", { default: () => true })
-const starLayers = ref<StarLayer[]>([])
-const isStarRotating = ref(true)
-const isStarVisible = ref(false)
-
-// Computed variables
-
-const prefersReducedMotion = computed(() => {
-  return preferredMotion.value === "reduce"
-})
-
-const starTransformTo = computed(() => {
-  return `translateY(-${bgStarHeight.value}px)`
-})
-
-const nbStars = computed(() => {
-  return ((bgStarHeight.value * bgStarWidth.value) / 40000) * appConfig.starDensity
-})
-
-// Watchers
-
-watch(isBackgroundBlurred, (isBlurred: boolean) => {
-  if (isBlurred) {
-    setTimeout(() => {
-      isStarRotating.value = false
-    }, 500)
-  } else {
-    isStarRotating.value = true
-  }
-})
-
-// Methods
-
-const generateStars = (n: number): Star[] => {
-  const stars: Star[] = []
-
-  for (let i = 0; i < n; i++) {
-    const star: Star = {
-      top: Math.floor(Math.random() * bgStarHeight.value),
-      left: Math.floor(Math.random() * bgStarWidth.value),
-      rotationDirection: Math.random() > 0.5 ? "clockwise" : "counter-clockwise",
-      rotationSpeed: Math.random() * 100 + 10, // Random speed between 10 and 110 seconds
-    }
-
-    stars.push(star)
-  }
-  return stars
-}
-
-const setStars = () => {
-  bgStarWidth.value = window.innerWidth
-  bgStarHeight.value = window.innerHeight
-  starLayers.value = [
-    { stars: generateStars(nbStars.value * 6), speed: 70, height: 0.5 },
-    { stars: generateStars(nbStars.value * 2), speed: 100, height: 0.75 },
-    { stars: generateStars(nbStars.value), speed: 150, height: 1.5 },
+const setFries = () => {
+  if (!rootElement.value) return
+  width.value = rootElement.value.clientWidth
+  height.value = rootElement.value.clientHeight
+  const count = ((width.value * height.value) / 40000) * appConfig.friesDensity
+  layers.value = [
+    { fries: generateFries(count * 5), duration: 70, size: 0.5 },
+    { fries: generateFries(count * 2), duration: 100, size: 0.8 },
+    { fries: generateFries(count), duration: 150, size: 1.5 },
   ]
 }
 
-const resetStars = () => {
+const resetFries = () => {
+  if (!rootElement.value) return
   if (
-    Math.abs(window.innerWidth - bgStarWidth.value) > bgStarWidth.value * RESET_THRESHOLD_X ||
-    Math.abs(window.innerHeight - bgStarHeight.value) > bgStarHeight.value * RESET_THRESHOLD_Y
+    Math.abs(rootElement.value.clientWidth - width.value) > width.value * RESET_THRESHOLD_X ||
+    Math.abs(rootElement.value.clientHeight - height.value) > height.value * RESET_THRESHOLD_Y
   )
-    setStars()
+    setFries()
 }
 
-watch(
-  isStarsEnabled,
-  (isEnabled) => {
-    if (isEnabled) {
-      setStars()
-      setTimeout(() => {
-        isStarVisible.value = true
-      }, 10)
-    } else {
-      isStarVisible.value = false
-      setTimeout(() => {
-        starLayers.value = []
-      }, 300)
-    }
+// Client-only components render their template after mounting a placeholder: wait for the element
+whenever(
+  rootElement,
+  () => {
+    setFries()
+    requestAnimationFrame(() => {
+      isVisible.value = true
+    })
   },
-  { immediate: true },
+  { once: true },
 )
 
-// Lifecycle hooks
-
-onMounted(() => {
-  useEventListener(window, "resize", useDebounceFn(resetStars, 200))
-})
+useEventListener(window, "resize", useDebounceFn(resetFries, 200))
 </script>
+
 <style>
-@keyframes translateStar {
-  from {
-    transform: translateY(0px);
-  }
+@keyframes fries-fall {
   to {
-    transform: v-bind("starTransformTo");
+    transform: translateY(calc(-1 * var(--fries-height)));
   }
 }
-@keyframes rotateStar-clockwise {
-  from {
-    transform: rotate(0deg);
-  }
+@keyframes fries-spin-cw {
   to {
     transform: rotate(360deg);
   }
 }
-@keyframes rotateStar-counter-clockwise {
-  from {
-    transform: rotate(0deg);
-  }
+@keyframes fries-spin-ccw {
   to {
     transform: rotate(-360deg);
   }
