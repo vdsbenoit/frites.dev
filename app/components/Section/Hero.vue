@@ -30,7 +30,7 @@ import { taglines } from '~/data/taglines'
           flex flex-col gap-[clamp(28px,5vw,40px)] rounded-[20px] border border-neutral-100/12
           bg-[rgba(14,14,14,0.45)] p-[clamp(24px,5vw,48px)]
           shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_30px_60px_-30px_rgba(0,0,0,0.8)]
-          backdrop-blur-[14px] backdrop-saturate-160
+          backdrop-blur-sm backdrop-saturate-160
         "
       >
         <h1
