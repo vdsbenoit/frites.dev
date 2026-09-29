@@ -98,7 +98,7 @@ onMounted(() => {
         </slot>
       </p>
       <p v-else :class="noticeClass" class="text-red-400">
-        This form is protected against robots. Please,
+        This form is protected against robots. Please
         <button type="button" class="cursor-pointer underline" @click="isPromptShown = true">
           accept the use of cookies
         </button>

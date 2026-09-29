@@ -31,7 +31,7 @@ const formSchema = z.object({
   message: z
     .string()
     .nonempty("What's on your mind?")
-    .min(MESSAGE_MIN, 'This is interesting! Please, tell me more.')
+    .min(MESSAGE_MIN, 'This is interesting! Please tell me more.')
     .max(MESSAGE_MAX, "Well, that's very long. Could you summarize it, or email me directly?"),
 })
 type FormSchema = z.output<typeof formSchema>

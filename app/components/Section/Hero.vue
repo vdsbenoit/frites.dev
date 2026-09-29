@@ -47,7 +47,7 @@ import { taglines } from '~/data/taglines'
         >
           I am Benoit, a freelance software engineer in Brussels. I design and deliver applications,
           manage the infrastructure they run on, and automate the processes around them. You work
-          with one senior engineer, accountable from first line of code to production.
+          with one senior engineer, accountable from the first line of code to production.
         </p>
 
         <div class="flex flex-wrap gap-3">

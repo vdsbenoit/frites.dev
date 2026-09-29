@@ -38,7 +38,7 @@ export const projects: Project[] = [
     description:
       'A cross-platform mobile app for Izix parking customers, built from scratch. Employees book a spot, see their planning and open the gate from their phone. Ionic and Capacitor, one codebase, iOS and Android.',
     highlights: [
-      'Booking flow with per-day windows and organisation switching',
+      'Booking flow with per-day windows and organization switching',
       'Gate control, receipts, wallet and NFC experiments',
       'Shipped to both stores from a single Ionic codebase',
     ],

@@ -75,7 +75,7 @@ const displayedLevel = ref(0)
         </p>
         <div class="pt-3">
           <p class="mb-1 text-sm tracking-wide">
-            Proficiency : {{ LEVELS[skill.level].label }}
+            Proficiency: {{ LEVELS[skill.level].label }}
           </p>
           <UProgress
             :model-value="displayedLevel"

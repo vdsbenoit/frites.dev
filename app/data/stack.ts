@@ -61,7 +61,7 @@ export const stack: SkillGroup[] = [
         icon: 'i-vscode-icons-file-type-tailwind',
         color: '#06b6d4',
         level: 3,
-        description: 'A utility-first CSS framework of pre-defined classes for styling components.',
+        description: 'A utility-first CSS framework of predefined classes for styling components.',
         opinion: 'Makes consistent, responsive designs far quicker to build and to hand over.',
       },
       {
@@ -194,7 +194,7 @@ export const stack: SkillGroup[] = [
         color: '#0086FD',
         level: 3,
         description: 'A C/C++ package manager.',
-        opinion: 'I helped a company wrap their C/C++ internal dependencies into conan packages.',
+        opinion: 'I helped a company wrap their C/C++ internal dependencies into Conan packages.',
       },
       {
         title: 'Prometheus',

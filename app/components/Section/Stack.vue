@@ -3,7 +3,7 @@ import { stack } from '~/data/stack'
 </script>
 
 <template>
-  <AppSection id="stack" title="The stack" label="Tap for detail" surface>
+  <AppSection id="stack" title="The stack" label="Tap for details" surface>
     <div class="mt-12 flex flex-col gap-10">
       <div v-for="group in stack" :key="group.title">
         <h3 class="mb-1 text-lg font-semibold text-neutral-100">

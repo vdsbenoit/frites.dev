@@ -9,7 +9,7 @@ export const services: Service[] = [
     title: 'Cloud & on-premises SaaS',
     detail: 'Implementation and integration that survives audits.',
   },
-  { title: 'Micro-services', detail: 'Development, deployment and the pipelines around them.' },
+  { title: 'Microservices', detail: 'Development, deployment and the pipelines around them.' },
   {
     title: 'Automation & scripting',
     detail: 'The repetitive work your team should stop doing by hand.',

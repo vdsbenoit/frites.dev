@@ -103,7 +103,7 @@ const pad = (value: number) => String(value).padStart(2, '0')
 
     <div class="mt-16">
       <h3 class="mb-2 font-mono text-[11px] tracking-[0.08em] text-neutral-500 uppercase">
-        Track record — select a role for detail
+        Track record — select a role for details
       </h3>
       <WorkTimeline />
     </div>
