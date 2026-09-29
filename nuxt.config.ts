@@ -1,4 +1,3 @@
-import yaml from "@rollup/plugin-yaml"
 import { defineNuxtConfig } from "nuxt/config"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -15,7 +14,6 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
   ],
   css: ["~/assets/css/main.css"],
-  vite: { plugins: [yaml()] },
   runtimeConfig: {
     public: {
       appVersion: process.env.npm_package_version || "unknown",

@@ -43,7 +43,6 @@
     "@nuxt/scripts": "^1.3.9",
     "@nuxt/ui": "^4.11.2",
     "@nuxtjs/seo": "^5.3.16",
-    "@rollup/plugin-yaml": "^5.0.0",
     "@takumi-rs/core": "^2.14.0",
     "@vue/test-utils": "^2.5.1",
     "eslint-config-prettier": "^10.1.8",

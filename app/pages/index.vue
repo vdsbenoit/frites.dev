@@ -4,6 +4,8 @@
     <main>
       <SectionHero />
       <SectionWork />
+      <SectionAbout />
+      <SectionStack />
     </main>
     <AppFooter />
   </div>
