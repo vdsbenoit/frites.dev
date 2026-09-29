@@ -57,7 +57,7 @@ import { taglines } from '~/data/taglines'
         <div class="flex flex-wrap gap-3">
           <UButton
             to="/#work"
-            label="See the work"
+            label="See my work"
             class="
               rounded-[10px] px-6.5 py-3.5 text-base font-semibold whitespace-nowrap
               shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_14px_30px_-14px_rgba(244,198,31,0.6)]
