@@ -6,9 +6,9 @@
       <div class="flex flex-col items-start gap-4">
         <div class="rounded-[4px] bg-linear-to-br from-neutral-800 to-frite-400 p-px">
           <img
-            src="~/assets/img/avatar.jpg"
+            src="~/assets/img/avatar.png"
             alt="Benoit Vander Stappen"
-            class="block w-full max-w-[240px] rounded-[4px]"
+            class="block w-full max-w-[240px] rounded-[4px] bg-[radial-gradient(circle_at_50%_40%,#454545_0%,#262626_45%,#141414_100%)]"
           />
         </div>
         <p class="font-mono text-[13px] text-neutral-400">@vdsbenoit</p>
