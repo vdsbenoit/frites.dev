@@ -1,14 +1,13 @@
 <template>
-  <div class="flex h-screen flex-col items-center justify-center gap-y-2 sm:justify-start">
-    <h1 class="text-8xl font-bold sm:mt-56">404</h1>
-    <p class="text-xl">Page not found</p>
-    <a
-      href="/"
-      class="bg-primary-400 focus:ring-primary-200 hover:bg-primary-300 active:bg-primary-500 mt-4 inline-block rounded-lg px-4 py-2 text-center font-semibold text-gray-800 shadow-xl transition ease-in focus:ring-2 focus:outline-none motion-safe:hover:scale-110"
-    >
-      Go back home
-    </a>
+  <div
+    class="flex min-h-svh flex-col items-center justify-center gap-2 bg-[radial-gradient(ellipse_at_bottom,#262626_0%,#0a0a0a_100%)] px-4 text-center"
+  >
+    <h1 class="text-8xl font-bold tracking-[-0.03em]">404</h1>
+    <p class="text-xl text-neutral-300">Page not found</p>
+    <UButton
+      to="/"
+      label="Go back home"
+      class="mt-4 rounded-[10px] px-[26px] py-3.5 text-base font-semibold"
+    />
   </div>
 </template>
-<script lang="ts" setup></script>
-<style scoped></style>

@@ -1,9 +1,28 @@
 export default defineAppConfig({
   ui: {
-    primary: "frite",
-    gray: "neutral",
-    notifications: {
-      position: "bottom-2 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-2",
+    colors: {
+      primary: "frite",
+      neutral: "neutral",
+    },
+    icons: {
+      arrowLeft: "i-heroicons-arrow-left",
+      arrowRight: "i-heroicons-arrow-right",
+      chevronDown: "i-heroicons-chevron-down",
+      close: "i-heroicons-x-mark",
+      menu: "i-heroicons-bars-3",
+    },
+    container: {
+      base: "lg:px-6",
+    },
+    button: {
+      compoundVariants: [
+        {
+          color: "primary",
+          variant: "solid",
+          class:
+            "text-neutral-800 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] hover:bg-frite-300 active:bg-frite-300",
+        },
+      ],
     },
   },
   starDensity: 0.7,

@@ -1,10 +1,10 @@
 <template>
-  <FriteBackground />
-  <NuxtPage />
-  <CookieConsent />
-  <UModals />
-  <UNotifications />
+  <UApp :toaster="{ position: 'bottom-center' }">
+    <NuxtPage />
+    <CookieConsent />
+  </UApp>
 </template>
+
 <script lang="ts" setup>
 const nuxtConfig = useRuntimeConfig()
 onMounted(() => {
