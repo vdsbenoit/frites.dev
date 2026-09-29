@@ -21,6 +21,7 @@ export interface Project {
   meta: string
   /** size: image side in px inside the 40px tile, 26 by default */
   logo: { background: string, src?: string, text?: string, size?: number }
+  usage: { count: string, label: string }
   description: string
   highlights: string[]
   tags: string[]
@@ -36,6 +37,7 @@ export const projects: Project[] = [
     name: 'Izix',
     meta: 'Parking app · 2025 → now',
     logo: { background: '#062F40', src: izixLogo, size: 36 },
+    usage: { count: '25k+', label: 'users, every day' },
     description:
       'A cross-platform mobile app for Izix parking customers, built from scratch. Employees book a spot, see their planning and open the gate from their phone. Ionic and Capacitor, one codebase, iOS and Android.',
     highlights: [
@@ -59,6 +61,7 @@ export const projects: Project[] = [
     name: 'Baden Battle',
     meta: 'Scores app · 2019 → now',
     logo: { background: '#ffffff', src: badenLogo, size: 38 },
+    usage: { count: '1,000+', label: 'users, one day a year' },
     description:
       'A live scoring app for a one-day event with over a thousand participants. Volunteers report duel results from their phone; teams, sections and circuits update in real time. Running every edition since 2019.',
     highlights: [

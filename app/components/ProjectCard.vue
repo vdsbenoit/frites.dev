@@ -42,7 +42,16 @@ const logoSize = computed(() => props.project.logo.size ?? 32)
           </div>
         </div>
 
-        <p class="mt-6 text-base leading-[1.65] text-pretty text-neutral-300">
+        <p class="mt-5 flex items-baseline gap-1.5">
+          <span class="text-lg font-bold tracking-[-0.01em] text-frite-400">
+            {{ project.usage.count }}
+          </span>
+          <span class="font-mono text-[11px] tracking-[0.06em] text-neutral-500 uppercase">
+            {{ project.usage.label }}
+          </span>
+        </p>
+
+        <p class="mt-4 text-base leading-[1.65] text-pretty text-neutral-300">
           {{ project.description }}
         </p>
 
