@@ -3,6 +3,8 @@ import type { Project } from '~/data/projects'
 
 const props = defineProps<{ project: Project, reverse?: boolean }>()
 
+const logoSize = computed(() => props.project.logo.size ?? 32)
+
 // DOM order matters: on narrow screens the columns stack in this order
 const columns = computed(() =>
   props.reverse ? (['screenshots', 'details'] as const) : (['details', 'screenshots'] as const),
@@ -19,16 +21,17 @@ const columns = computed(() =>
           <div class="flex items-center gap-3">
             <span
               class="
-                flex size-10 items-center justify-center rounded-[8px] text-[15px] font-bold
-                text-white
+                flex size-10 items-center justify-center overflow-hidden rounded-[8px] text-[15px]
+                font-bold text-white
               "
               :style="{ backgroundColor: project.logo.background }"
             >
               <img
                 v-if="project.logo.src"
+                class="max-w-none shrink-0"
                 :src="project.logo.src"
                 :alt="`${project.name} logo`"
-                class="size-[26px]"
+                :style="{ width: `${logoSize}px`, height: `${logoSize}px` }"
               >
               <template v-else>{{ project.logo.text }}</template>
             </span>
