@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+import { hasSection } from '~/data/sections'
+
+defineOgImage('FriteCustom')
+</script>
+
 <template>
   <div class="relative overflow-x-hidden">
     <AppHeader />
@@ -12,9 +18,3 @@
     <AppFooter />
   </div>
 </template>
-
-<script lang="ts" setup>
-import { hasSection } from "~/data/sections"
-
-defineOgImage("FriteCustom")
-</script>

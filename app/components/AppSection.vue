@@ -1,3 +1,15 @@
+<script lang="ts" setup>
+import type { SectionId } from '~/data/sections'
+import { sectionNumber } from '~/data/sections'
+
+defineProps<{
+  id: SectionId
+  title: string
+  label?: string
+  surface?: boolean
+}>()
+</script>
+
 <template>
   <section
     :id="id"
@@ -10,14 +22,3 @@
     </UContainer>
   </section>
 </template>
-
-<script lang="ts" setup>
-import { sectionNumber, type SectionId } from "~/data/sections"
-
-defineProps<{
-  id: SectionId
-  title: string
-  label?: string
-  surface?: boolean
-}>()
-</script>

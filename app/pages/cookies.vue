@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+const { isPromptShown, isConsentGiven } = useCookieConsent()
+
+watch(isConsentGiven, () => {
+  isPromptShown.value = false
+})
+</script>
+
 <template>
   <UContainer class="max-w-[820px] py-[clamp(56px,10vw,96px)]">
     <SectionHeader as="h1" title="Cookies & privacy" />
@@ -20,7 +28,9 @@
         Terms of Service for this specific service context.
       </p>
 
-      <h2 class="mt-6 text-lg font-semibold text-neutral-100">Cookie settings</h2>
+      <h2 class="mt-6 text-lg font-semibold text-neutral-100">
+        Cookie settings
+      </h2>
       <p>
         User settings cookies are necessary and are always enabled. Optional cookies (incl.
         Google's) are disabled by default. You can change this setting using the switch below.
@@ -35,7 +45,9 @@
         </template>
       </USwitch>
 
-      <h2 class="mt-6 text-lg font-semibold text-neutral-100">Removing cookies</h2>
+      <h2 class="mt-6 text-lg font-semibold text-neutral-100">
+        Removing cookies
+      </h2>
       <p>
         Most web browsers allow you to delete cookies from your device. You can also block cookies
         in advance or request a warning before cookies are installed. For more information, refer to
@@ -52,11 +64,3 @@
     />
   </UContainer>
 </template>
-
-<script lang="ts" setup>
-const { isPromptShown, isConsentGiven } = useCookieConsent()
-
-watch(isConsentGiven, () => {
-  isPromptShown.value = false
-})
-</script>

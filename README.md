@@ -7,8 +7,7 @@
 - Nuxt UI 4
 - Tailwind 4 (CSS-first theme in `app/assets/css/main.css`)
 - TypeScript
-- Prettier (& prettier-plugin-tailwindcss) enforced
-- ESLint enforced
+- ESLint (@antfu/eslint-config) for linting and formatting
 - Firebase hosting
 
 ## Third party libraries
