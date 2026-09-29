@@ -18,11 +18,11 @@ import { taglines } from '~/data/taglines'
       "
     />
 
-    <!-- The bottom padding is larger on purpose: the panel looks centred on load -->
+    <!-- Below sm, the larger bottom padding keeps the panel higher on the screen -->
     <UContainer
       class="
         relative flex min-h-svh flex-col justify-center pt-25 pb-50
-        sm:pt-22
+        sm:py-22
       "
     >
       <div
