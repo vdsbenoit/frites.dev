@@ -25,7 +25,7 @@
       "type": "node",
       "request": "launch",
       "outputCapture": "std",
-      "program": "${workspaceFolder}/node_modules/nuxi/bin/nuxi.mjs",
+      "program": "${workspaceFolder}/node_modules/nuxt/bin/nuxt.mjs",
       "args": ["dev"]
     }
   ],

@@ -38,3 +38,6 @@ lerna-debug.log*
 
 # firebase deploy
 .firebase/*
+
+# vitest reports
+.vitest

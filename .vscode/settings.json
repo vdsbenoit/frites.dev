@@ -1,11 +1,16 @@
 {
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
   "files.associations": {
     "*.css": "tailwindcss"
   },
   "editor.quickSuggestions": {
     "strings": true
   },
-  "tailwindCSS.experimental.configFile": "tailwind.config.ts",
+  "tailwindCSS.experimental.configFile": "app/assets/css/main.css",
   "tailwindCSS.experimental.classRegex": [
     ["ui:\\s*{([^)]*)\\s*}", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["/\\*\\s?ui\\s?\\*/\\s*{([^;]*)}", ":\\s*[\"'`]([^\"'`]*).*?[\"'`]"]
@@ -24,15 +29,11 @@
     "gesturestart",
     "gnubash",
     "grecaptcha",
+    "takumi",
     "heroicons",
     "iconoir",
     "msbuild",
     "plusplus",
     "tabler"
-  ],
-  "github.copilot.chat.codeGeneration.instructions": [
-    {
-      "text": "This is a Nuxt project. Use Vue 3 Composition API with TypeScript for the templating and the scripting. You can use VueUse utilities too. Use Nuxt UI and Tailwind for the design."
-    }
-  ],
+  ]
 }
