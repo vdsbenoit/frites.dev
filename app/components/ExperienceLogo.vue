@@ -12,8 +12,8 @@ const size = computed(() => ({
 <template>
   <span
     class="
-      flex size-full items-center justify-center overflow-hidden rounded-full
-      shadow-[inset_0_0_0_1px_#404040]
+      relative flex size-full items-center justify-center overflow-hidden rounded-full
+      after:absolute after:inset-0 after:rounded-full after:shadow-[inset_0_0_0_1px_#404040]
     "
     :style="{ backgroundColor: experience.logo.background }"
   >
