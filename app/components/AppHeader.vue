@@ -115,7 +115,10 @@ const menuItems: DropdownMenuItem[] = sections.map(section => ({
           aria-label="Menu"
           color="neutral"
           variant="outline"
-          class="size-11 justify-center rounded-[10px] bg-neutral-100/6 ring-neutral-100/14"
+          class="
+            size-11 cursor-pointer justify-center rounded-[10px] bg-neutral-100/6
+            ring-neutral-100/14
+          "
           :ui="{ leadingIcon: 'size-5' }"
         />
         <template #item-trailing="{ item }">

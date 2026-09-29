@@ -114,7 +114,7 @@ function titleClass(index: number) {
             color="neutral"
             variant="outline"
             class="
-              size-8 justify-center rounded-[4px] text-neutral-400 ring-neutral-800
+              size-8 cursor-pointer justify-center rounded-[4px] text-neutral-400 ring-neutral-800
               hover:bg-neutral-800 hover:text-neutral-100
             "
             @click="selectedIndex = undefined"

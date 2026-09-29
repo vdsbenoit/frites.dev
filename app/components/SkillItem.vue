@@ -39,7 +39,7 @@ const displayedLevel = ref(0)
         `,
         close:
           `
-            inset-e-4 top-4 size-7 justify-center rounded-[4px] p-0 text-neutral-900
+            inset-e-4 top-4 size-7 cursor-pointer justify-center rounded-[4px] p-0 text-neutral-900
             hover:bg-neutral-300
           `,
       }"
@@ -51,8 +51,8 @@ const displayedLevel = ref(0)
         color="neutral"
         variant="outline"
         class="
-          size-16 justify-center rounded-full bg-neutral-900 ring-neutral-800 transition-all
-          duration-200 ease-in-out
+          size-16 cursor-pointer justify-center rounded-full bg-neutral-900 ring-neutral-800
+          transition-all duration-200 ease-in-out
           hover:-translate-y-4 hover:scale-110 hover:bg-neutral-900
           hover:shadow-[0_1px_3px_0_#404040]
         "
