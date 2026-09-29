@@ -35,10 +35,5 @@
     "msbuild",
     "plusplus",
     "tabler"
-  ],
-  "github.copilot.chat.codeGeneration.instructions": [
-    {
-      "text": "This is a Nuxt 4 project (sources in app/). Use Vue 3 Composition API with TypeScript for the templating and the scripting. You can use VueUse utilities too. Use Nuxt UI 4 components and Tailwind 4 utilities for the design."
-    }
   ]
 }
