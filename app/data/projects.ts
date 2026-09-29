@@ -4,6 +4,7 @@ import baden1 from '~/assets/img/projects/baden-1.png'
 import baden2 from '~/assets/img/projects/baden-2.png'
 import baden3 from '~/assets/img/projects/baden-3.png'
 import baden4 from '~/assets/img/projects/baden-4.png'
+import baden5 from '~/assets/img/projects/baden-5.png'
 import izixAccess from '~/assets/img/projects/izix-access.png'
 import izixNewReservation from '~/assets/img/projects/izix-new-reservation.png'
 import izixOpenGate from '~/assets/img/projects/izix-open-gate.png'
@@ -68,12 +69,13 @@ export const projects: Project[] = [
     tags: ['Ionic', 'Vue', 'Firebase', 'Firestore'],
     link: { label: 'badenbattle.be', url: 'https://badenbattle.be/' },
     screenshots: [
-      { src: baden1, alt: 'Baden Battle app — events list' },
-      { src: baden2, alt: 'Baden Battle app — screen 2' },
+      { src: baden1, alt: 'Baden Battle app — score check' },
+      { src: baden2, alt: 'Baden Battle app — schedule' },
       { src: baden3, alt: 'Baden Battle app — duel detail' },
       { src: baden4, alt: 'Baden Battle app — team score' },
+      { src: baden5, alt: 'Baden Battle app — group score' },
     ],
     startIndex: 1,
-    isFramed: false,
+    isFramed: true,
   },
 ]
