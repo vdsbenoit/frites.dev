@@ -21,8 +21,6 @@ export default defineNuxtConfig({
       emailjsUserPubKey: "v_5w2uNf_muKtiZ_h",
       emailjsServiceId: "service_eqtnwg3",
       emailjsTemplateId: "template_grzi0mc",
-      // prettier-ignore
-      googleSchedulerCalendarId: "AcZssZ19CN4i1EHDIxZhCyJPYHcCg8T_sj1NDkP_nJnxZw2Yf_NfkoFqIT2BuCl1xzH92dnHnkW4xLdJ",
       captchaSiteKey: "6Le_eE8qAAAAAPsyNWtWJZTulFsdQ98bOM2KiC3w",
     },
   },

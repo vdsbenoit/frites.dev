@@ -1,12 +1,12 @@
-<!-- 
+<!--
 This component adds an invisible reCaptcha validation to a form.
-Instructions of use : 
+Instructions of use :
  - Set the reCaptcha site key in the public.captchaSiteKey property of the nuxt.config.ts file.
  - Wrap the form with this component. It will automatically execute the reCaptcha validation when the form is focused out.
  - In the parent component, read the v-model:response and v-model:error values to check the validation status.
 
-Since, the reCaptcha badge is hidden by default, this component adds a notice to the user that the site is protected by reCaptcha, 
-in order to comply with Google's terms of service. One can customize the notice text by passing the notice-class prop.
+Since the reCaptcha badge is hidden, this component shows a notice that the site is protected by reCaptcha.
+Customize it with the notice slot and the notice-class prop.
 -->
 <template>
   <div>
@@ -22,56 +22,36 @@ in order to comply with Google's terms of service. One can customize the notice 
       data-error-callback="captchaErrorCallback"
     ></div>
 
-    <div>
-      <p v-if="isCookieConsentGiven" :class="noticeClass">
-        This site is protected by reCAPTCHA and the Google
-        <ULink to="https://policies.google.com/privacy" target="_blank" class="underline">
-          Privacy Policy
-        </ULink>
-        and
-        <ULink to="https://policies.google.com/terms" target="_blank" class="underline">
-          Terms of Service
-        </ULink>
-        apply.
+    <!-- Depends on the consent cookie, which is unknown when the page is prerendered -->
+    <ClientOnly>
+      <p v-if="isConsentGiven" :class="noticeClass">
+        <slot name="notice">This site is protected by reCAPTCHA.</slot>
       </p>
-      <p v-else class="pt-3 text-red-500">
+      <p v-else :class="noticeClass" class="text-red-400">
         This form is protected against robots. Please,
-        <span
-          class="cursor-pointer underline hover:text-red-700"
-          @click="isCookieConsentShown = true"
-        >
+        <button type="button" class="cursor-pointer underline" @click="isPromptShown = true">
           accept the use of cookies
-        </span>
+        </button>
         to enable the reCAPTCHA validation.
       </p>
-    </div>
+    </ClientOnly>
   </div>
 </template>
 
 <script lang="ts" setup>
 const nuxtRuntimeConfig = useRuntimeConfig()
 
-// Props & models
-
 const response = defineModel<string>("response")
 const error = defineModel<boolean>("error")
 
-defineProps({
-  noticeClass: {
-    type: String,
-    default: "text-xs text-gray-800",
-  },
+withDefaults(defineProps<{ noticeClass?: string }>(), {
+  noticeClass: "text-xs",
 })
 
-// Reactive data
-
-const isCookieConsentShown = useCookie("cookie-consent-prompt", { default: () => true })
-const isCookieConsentGiven = useCookie("cookie-consent", { default: () => false })
-
-// Methods
+const { isPromptShown, isConsentGiven } = useCookieConsent()
 
 const execute = () => {
-  if (!isCookieConsentGiven.value) return
+  if (!isConsentGiven.value) return
   error.value = false
   if (response.value != "") return
   if (!window.grecaptcha) {
@@ -115,7 +95,7 @@ onMounted(() => {
       },
       {
         trigger: useScriptTriggerConsent({
-          consent: isCookieConsentGiven,
+          consent: isConsentGiven,
         }),
       },
     )
