@@ -2,7 +2,7 @@ stages:
   - install
   - verify
   - build
-  - deploy
+  # - deploy
 
 npm-ci:
   stage: install
@@ -66,16 +66,16 @@ generate:
       - .output/public
 
 # Deploy only if we are on main
-firebase:
-  stage: deploy
-  image: node:lts-slim
-  cache:
-    key: firebase-tools
-    paths:
-      - .npm/
-  only:
-    - main
-  before_script:
-    - npm install firebase-tools --cache .npm --prefer-offline
-  script:
-    - npx firebase deploy --only hosting --token $FIREBASE_TOKEN --debug
+# firebase:
+#   stage: deploy
+#   image: node:lts-slim
+#   cache:
+#     key: firebase-tools
+#     paths:
+#       - .npm/
+#   only:
+#     - main
+#   before_script:
+#     - npm install firebase-tools --cache .npm --prefer-offline
+#   script:
+#     - npx firebase deploy --only hosting --token $FIREBASE_TOKEN --debug
