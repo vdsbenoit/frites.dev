@@ -14,7 +14,7 @@
     <UButton
       to="/"
       label="Go back home"
-      class="mt-4 rounded-[10px] px-[26px] py-3.5 text-base font-semibold"
+      class="mt-4 rounded-[10px] px-6.5 py-3.5 text-base font-semibold"
     />
   </div>
 </template>

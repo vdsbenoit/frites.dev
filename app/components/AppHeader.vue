@@ -24,7 +24,7 @@ const menuItems: DropdownMenuItem[] = sections.map(section => ({
       `,
       container: [
         `
-          pointer-events-auto max-w-[1120px] gap-4 px-0 py-2
+          pointer-events-auto max-w-280 gap-4 px-0 py-2
           sm:px-0
           lg:px-0
         `,
@@ -58,7 +58,7 @@ const menuItems: DropdownMenuItem[] = sections.map(section => ({
           hover:text-inherit
         "
       >
-        <img src="~/assets/img/logo-transparent.png" alt="frites.dev logo" class="size-[30px]">
+        <img src="~/assets/img/logo-transparent.png" alt="frites.dev logo" class="size-7.5">
         <span class="text-[17px] font-bold tracking-[-0.01em]">frites.dev</span>
       </ULink>
     </template>
@@ -72,14 +72,14 @@ const menuItems: DropdownMenuItem[] = sections.map(section => ({
         color="neutral"
         variant="ghost"
         class="
-          rounded-[9px] px-[11px] py-1.5 text-sm font-medium text-neutral-300
+          rounded-[9px] px-2.75 py-1.5 text-sm font-medium text-neutral-300
           hover:bg-neutral-100/8 hover:text-neutral-100
         "
       />
       <UButton
         to="/#contact"
         label="Start a project"
-        class="ml-1 rounded-[10px] px-3.5 py-[7px] text-sm font-semibold whitespace-nowrap"
+        class="ml-1 rounded-[10px] px-3.5 py-1.75 text-sm font-semibold whitespace-nowrap"
       />
     </nav>
 
@@ -87,7 +87,7 @@ const menuItems: DropdownMenuItem[] = sections.map(section => ({
       <UButton
         to="/#contact"
         label="Contact"
-        class="rounded-[10px] px-3.5 py-[9px] text-sm font-semibold whitespace-nowrap"
+        class="rounded-[10px] px-3.5 py-2.25 text-sm font-semibold whitespace-nowrap"
       />
       <UDropdownMenu
         v-model:open="isMenuOpen"

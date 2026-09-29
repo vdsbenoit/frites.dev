@@ -7,7 +7,7 @@ watch(isConsentGiven, () => {
 </script>
 
 <template>
-  <UContainer class="max-w-[820px] py-[clamp(56px,10vw,96px)]">
+  <UContainer class="max-w-205 py-[clamp(56px,10vw,96px)]">
     <SectionHeader as="h1" title="Cookies & privacy" />
     <div class="mt-8 flex flex-col gap-4 text-base leading-[1.65] text-neutral-300">
       <p>

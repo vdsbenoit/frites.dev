@@ -12,7 +12,7 @@ import { stack } from '~/data/stack'
         <p class="mb-6 text-sm text-neutral-500">
           {{ group.caption }}
         </p>
-        <div class="flex flex-wrap gap-x-[18px] gap-y-3.5">
+        <div class="flex flex-wrap gap-x-4.5 gap-y-3.5">
           <SkillItem v-for="skill in group.items" :key="skill.title" :skill="skill" />
         </div>
       </div>

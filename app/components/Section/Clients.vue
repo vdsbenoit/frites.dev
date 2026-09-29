@@ -25,7 +25,7 @@ function initials(name: string) {
         dots: 'static mt-6 justify-start gap-1.5',
         dot: `
           size-1.5 rounded-[3px] bg-neutral-700 transition-[width,background-color] duration-300
-          data-[state=active]:w-[22px] data-[state=active]:bg-frite-400
+          data-[state=active]:w-5.5 data-[state=active]:bg-frite-400
         `,
       }"
     >
@@ -38,7 +38,7 @@ function initials(name: string) {
         <blockquote class="flex-1 text-base leading-[1.65] text-pretty text-neutral-100">
           {{ item.quote }}
         </blockquote>
-        <figcaption class="mt-6 border-t border-neutral-800 pt-[18px]">
+        <figcaption class="mt-6 border-t border-neutral-800 pt-4.5">
           <UUser
             :name="item.name"
             :description="item.role"

@@ -15,7 +15,7 @@ const FIELD_UI = {
 }
 const INPUT_CLASS
   = `
-    rounded-[4px] bg-neutral-950 px-3.5 py-[13px] text-base text-neutral-100 ring-neutral-800
+    rounded-[4px] bg-neutral-950 px-3.5 py-3.25 text-base text-neutral-100 ring-neutral-800
     placeholder:text-neutral-600
     focus-visible:ring-frite-400 focus-visible:outline-0
   `
@@ -110,7 +110,7 @@ async function onSubmit(event: FormSubmitEvent<FormSchema>) {
         <UForm
           :schema="formSchema"
           :state="formData"
-          class="flex flex-col gap-[18px]"
+          class="flex flex-col gap-4.5"
           @submit="onSubmit"
         >
           <UFormField label="Name" name="name" :ui="FIELD_UI">
@@ -154,7 +154,7 @@ async function onSubmit(event: FormSubmitEvent<FormSchema>) {
               label="Send message"
               block
               :disabled="!emailjs.isInitialized.value || !captchaResponse"
-              class="rounded-[4px] px-[22px] py-[15px] text-base font-semibold"
+              class="rounded-[4px] px-5.5 py-3.75 text-base font-semibold"
             />
           </UTooltip>
         </UForm>

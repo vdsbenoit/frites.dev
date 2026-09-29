@@ -32,7 +32,7 @@ const scrollNext = () => carouselRef.value?.emblaApi?.scrollNext()
 <template>
   <div
     class="
-      flex min-w-0 flex-col justify-center gap-[18px] overflow-hidden bg-surface-2
+      flex min-w-0 flex-col justify-center gap-4.5 overflow-hidden bg-surface-2
       py-[clamp(20px,5vw,32px)]
     "
   >
@@ -47,7 +47,7 @@ const scrollNext = () => carouselRef.value?.emblaApi?.scrollNext()
       :ui="{
         viewport: 'h-[clamp(300px,62vw,380px)] touch-pan-y',
         container: 'h-full items-center',
-        item: 'basis-[186px]',
+        item: 'basis-46.5',
       }"
       @select="selectedIndex = $event"
     >
@@ -85,7 +85,7 @@ const scrollNext = () => carouselRef.value?.emblaApi?.scrollNext()
           class="
             h-1.5 cursor-pointer rounded-[3px] transition-[width,background-color] duration-300
           "
-          :class="index === selectedIndex ? 'w-[22px] bg-frite-400' : 'w-1.5 bg-neutral-700'"
+          :class="index === selectedIndex ? 'w-5.5 bg-frite-400' : 'w-1.5 bg-neutral-700'"
           @click="scrollTo(index)"
         />
       </div>

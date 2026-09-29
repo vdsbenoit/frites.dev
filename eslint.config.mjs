@@ -62,6 +62,7 @@ export default withNuxt(
       settings: {
         'better-tailwindcss': {
           entryPoint: 'app/assets/css/main.css',
+          rootFontSize: 16,
           selectors: [
             ...getDefaultSelectors(),
             // Nuxt UI `:ui` props: { slot: 'classes' }

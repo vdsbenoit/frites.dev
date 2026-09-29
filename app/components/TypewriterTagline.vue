@@ -57,7 +57,7 @@ onBeforeUnmount(() => clearTimeout(timer))
 </script>
 
 <template>
-  <div class="flex max-w-[940px]">
+  <div class="flex max-w-235">
     <span
       class="
         block min-h-[1.4em] animate-blink-caret border-r-[0.12em] border-transparent pr-0.5

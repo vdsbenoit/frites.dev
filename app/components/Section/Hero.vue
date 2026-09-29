@@ -21,8 +21,8 @@ import { taglines } from '~/data/taglines'
     <!-- The bottom padding is larger on purpose: the panel looks centred on load -->
     <UContainer
       class="
-        relative flex min-h-svh flex-col justify-center pt-[100px] pb-[200px]
-        sm:pt-[88px]
+        relative flex min-h-svh flex-col justify-center pt-25 pb-50
+        sm:pt-22
       "
     >
       <div
@@ -35,7 +35,7 @@ import { taglines } from '~/data/taglines'
       >
         <h1
           class="
-            max-w-[940px] animate-bring-in text-[clamp(38px,7vw,86px)] leading-[1.02] font-bold
+            max-w-235 animate-bring-in text-[clamp(38px,7vw,86px)] leading-[1.02] font-bold
             tracking-[-0.03em] text-neutral-100
           "
         >
@@ -46,9 +46,7 @@ import { taglines } from '~/data/taglines'
         <TypewriterTagline :phrases="taglines" />
 
         <p
-          class="
-            max-w-[620px] text-[clamp(16px,1.5vw,19px)] leading-[1.6] text-pretty text-neutral-300
-          "
+          class="max-w-155 text-[clamp(16px,1.5vw,19px)] leading-[1.6] text-pretty text-neutral-300"
         >
           I am Benoit, a freelance software engineer in Brussels. I design and deliver applications,
           manage the infrastructure they run on, and automate the processes around them. You work
@@ -60,7 +58,7 @@ import { taglines } from '~/data/taglines'
             to="/#work"
             label="See the work"
             class="
-              rounded-[10px] px-[26px] py-3.5 text-base font-semibold whitespace-nowrap
+              rounded-[10px] px-6.5 py-3.5 text-base font-semibold whitespace-nowrap
               shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_14px_30px_-14px_rgba(244,198,31,0.6)]
             "
           />
@@ -70,7 +68,7 @@ import { taglines } from '~/data/taglines'
             color="neutral"
             variant="outline"
             class="
-              rounded-[10px] bg-neutral-800/60 px-[26px] py-[13px] text-base font-semibold
+              rounded-[10px] bg-neutral-800/60 px-6.5 py-3.25 text-base font-semibold
               whitespace-nowrap text-neutral-100 ring-neutral-700 backdrop-blur-sm
               hover:bg-neutral-800 hover:text-neutral-100 hover:ring-neutral-600
             "

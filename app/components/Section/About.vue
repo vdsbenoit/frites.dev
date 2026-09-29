@@ -21,7 +21,7 @@ const pad = (value: number) => String(value).padStart(2, '0')
             src="~/assets/img/avatar.png"
             alt="Benoit Vander Stappen"
             class="
-              block w-full max-w-[240px] rounded-[4px]
+              block w-full max-w-60 rounded-[4px]
               bg-[radial-gradient(circle_at_50%_40%,#454545_0%,#262626_45%,#141414_100%)]
             "
           >
@@ -88,9 +88,9 @@ const pad = (value: number) => String(value).padStart(2, '0')
         <div
           v-for="value in workValues"
           :key="value.title"
-          class="flex flex-col gap-2.5 bg-neutral-950 px-5 py-[22px]"
+          class="flex flex-col gap-2.5 bg-neutral-950 px-5 py-5.5"
         >
-          <UIcon :name="value.icon" class="size-[22px] text-frite-400" />
+          <UIcon :name="value.icon" class="size-5.5 text-frite-400" />
           <div class="text-[15px] font-semibold text-neutral-100">
             {{ value.title }}
           </div>

@@ -53,11 +53,11 @@ function titleClass(index: number) {
         orientation="horizontal"
         :ui="{
           root: `
-            relative min-w-[896px] gap-0 ps-14
-            before:absolute before:inset-s-0 before:top-[56px] before:h-px before:w-14
+            relative min-w-4xl gap-0 ps-14
+            before:absolute before:inset-s-0 before:top-14 before:h-px before:w-14
             before:bg-linear-to-r before:from-transparent before:to-frite-400
           `,
-          item: 'min-w-[140px] cursor-pointer gap-3.5',
+          item: 'min-w-35 cursor-pointer gap-3.5',
           container: 'h-11 gap-0',
           indicator: INDICATOR_CLASS,
           separator: SEPARATOR_CLASS,
@@ -123,7 +123,7 @@ function titleClass(index: number) {
       </div>
       <!-- eslint-disable vue/no-v-html -- trusted static content -->
       <p
-        class="mt-4 max-w-[780px] text-[15px] leading-[1.65] text-pretty text-neutral-300"
+        class="mt-4 max-w-195 text-[15px] leading-[1.65] text-pretty text-neutral-300"
         v-html="selectedExperience.description"
       />
       <!-- eslint-enable vue/no-v-html -->

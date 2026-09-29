@@ -28,7 +28,7 @@ const visibleLinks = computed(() => LINKS.filter(link => props.withEmail || !lin
 </script>
 
 <template>
-  <div class="flex items-center gap-[18px]">
+  <div class="flex items-center gap-4.5">
     <ULink
       v-for="link in visibleLinks"
       :key="link.label"

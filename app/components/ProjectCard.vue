@@ -68,7 +68,7 @@ const columns = computed(() =>
               color="neutral"
               variant="outline"
               class="
-                rounded-[3px] px-[9px] py-1 font-mono text-[11px] font-normal text-neutral-400
+                rounded-[3px] px-2.25 py-1 font-mono text-[11px] font-normal text-neutral-400
                 ring-neutral-800
               "
             />

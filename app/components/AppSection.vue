@@ -13,7 +13,7 @@ defineProps<{
 <template>
   <section
     :id="id"
-    class="scroll-mt-[110px] border-b border-neutral-800"
+    class="scroll-mt-27.5 border-b border-neutral-800"
     :class="{ 'bg-surface': surface }"
   >
     <UContainer class="py-[clamp(56px,10vw,96px)]">
