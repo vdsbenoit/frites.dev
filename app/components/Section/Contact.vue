@@ -27,9 +27,10 @@ const contactEmail = useRuntimeConfig().public.contactFormToEmail
 
 const formSchema = z.object({
   name: z.string().optional(),
-  email: z.email('Invalid email format'),
+  email: z.email('Invalid email format').nonempty('Email is required'),
   message: z
     .string()
+    .nonempty("What's on your mind?")
     .min(MESSAGE_MIN, 'This is interesting! Please, tell me more.')
     .max(MESSAGE_MAX, "Well, that's very long. Could you summarize it, or email me directly?"),
 })
