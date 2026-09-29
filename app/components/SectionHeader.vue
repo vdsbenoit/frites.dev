@@ -11,7 +11,11 @@ withDefaults(
 </script>
 
 <template>
-  <div class="flex items-baseline gap-4 border-b-2 border-frite-400 pb-3.5">
+  <div
+    data-section-header class="
+      flex scroll-mt-27.5 items-baseline gap-4 border-b-2 border-frite-400 pb-3.5
+    "
+  >
     <span v-if="number" class="font-mono text-xs text-frite-400">{{ number }}</span>
     <component
       :is="as"

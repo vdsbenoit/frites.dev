@@ -16,5 +16,6 @@ defineOgImage('FriteCustom')
       <SectionContact />
     </main>
     <AppFooter />
+    <SectionNav />
   </div>
 </template>
