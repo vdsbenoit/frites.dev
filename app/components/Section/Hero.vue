@@ -19,7 +19,12 @@ import { taglines } from '~/data/taglines'
     />
 
     <!-- The bottom padding is larger on purpose: the panel looks centred on load -->
-    <UContainer class="relative flex min-h-svh flex-col justify-center pt-[88px] pb-[200px]">
+    <UContainer
+      class="
+        relative flex min-h-svh flex-col justify-center pt-[100px] pb-[200px]
+        sm:pt-[88px]
+      "
+    >
       <div
         class="
           flex flex-col gap-[clamp(28px,5vw,40px)] rounded-[20px] border border-neutral-100/12
