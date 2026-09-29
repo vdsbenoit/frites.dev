@@ -61,7 +61,7 @@ onBeforeUnmount(() => clearTimeout(timer))
     <span
       class="
         block min-h-[1.4em] animate-blink-caret border-r-[0.12em] border-transparent pr-0.5
-        font-mono text-[clamp(12px,1.9vw,19px)] whitespace-pre text-neutral-400
+        font-mono text-[clamp(12px,1.9vw,19px)] leading-[1.4] whitespace-pre text-neutral-400
       "
     >
       {{ text }}
