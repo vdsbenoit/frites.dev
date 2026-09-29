@@ -35,8 +35,9 @@ import { taglines } from '~/data/taglines'
       >
         <h1
           class="
-            max-w-235 animate-bring-in text-[clamp(38px,7vw,86px)] leading-[1.02] font-bold
+            max-w-235 animate-bring-in text-[clamp(32px,7vw,86px)] leading-[1.2] font-bold
             tracking-[-0.03em] text-neutral-100
+            sm:leading-[1.02]
           "
         >
           <span class="block">Tailored software,</span>
