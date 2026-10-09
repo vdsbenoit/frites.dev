@@ -1,10 +1,14 @@
 <script lang="ts" setup>
 import { taglines } from '~/data/taglines'
+
+const sectionElement = useTemplateRef('section')
+useSectionReadTracking(sectionElement, 'top')
 </script>
 
 <template>
   <section
     id="top"
+    ref="section"
     class="
       relative overflow-hidden border-b border-neutral-800
       bg-[radial-gradient(ellipse_at_bottom,#262626_0%,#0a0a0a_100%)]

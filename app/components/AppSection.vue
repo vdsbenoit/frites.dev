@@ -2,17 +2,21 @@
 import type { SectionId } from '~/data/sections'
 import { sectionNumber } from '~/data/sections'
 
-defineProps<{
+const props = defineProps<{
   id: SectionId
   title: string
   label?: string
   surface?: boolean
 }>()
+
+const sectionElement = useTemplateRef('section')
+useSectionReadTracking(sectionElement, props.id)
 </script>
 
 <template>
   <section
     :id="id"
+    ref="section"
     class="scroll-mt-27.5 border-b border-neutral-800"
     :class="{ 'bg-surface': surface }"
   >

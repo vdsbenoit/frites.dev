@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 const nuxtConfig = useRuntimeConfig()
+useAnalytics().trackLinkClicks()
 onMounted(() => {
   console.info(`App Version: ${nuxtConfig.public.appVersion}`)
   // Prevent gesture zoom on mobile

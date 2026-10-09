@@ -55,6 +55,22 @@ export default defineNuxtConfig({
   ogImage: {
     zeroRuntime: true,
   },
+  scripts: {
+    registry: {
+      umamiAnalytics: {
+        websiteId: 'be0d702b-90c9-4e4f-ac1a-549d53939fba',
+        // Ignores visits from localhost and Firebase preview channels
+        domains: ['frites.dev'],
+        // A tracker served from frites.dev would send its data to frites.dev, which has no server
+        bundle: false,
+        // Anchor links (/#work) are not new page views
+        scriptInput: { 'data-exclude-hash': 'true' },
+        // The CSP ('strict-dynamic') blocks a preload of a third-party script
+        scriptOptions: { warmupStrategy: 'preconnect' },
+        trigger: 'onNuxtReady',
+      },
+    },
+  },
   site: {
     url: 'https://frites.dev',
     name: 'frites.dev SRL • Tailored Software Solutions',

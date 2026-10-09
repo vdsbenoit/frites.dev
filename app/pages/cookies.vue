@@ -27,6 +27,13 @@ watch(isConsentGiven, () => {
         Addendum. reCAPTCHA processing is no longer governed by Google's consumer Privacy Policy and
         Terms of Service for this specific service context.
       </p>
+      <p>
+        This website uses Umami to count visits and see which sections get read. Umami sets no
+        cookies and does not store your IP address or any other personal data. It only keeps
+        anonymous statistics such as pages viewed, country, browser and device type. Because it
+        cannot identify you, it runs without consent and the cookie setting below does not affect
+        it.
+      </p>
 
       <h2 class="mt-6 text-lg font-semibold text-neutral-100">
         Cookie settings
