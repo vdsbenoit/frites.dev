@@ -61,12 +61,17 @@ const scrollNext = () => carouselRef.value?.emblaApi?.scrollNext()
         "
         @click="scrollTo(index)"
       >
-        <img
+        <NuxtImg
           :src="item.src"
           :alt="item.alt"
+          width="186"
+          height="331"
+          densities="x1 x2"
+          format="webp"
+          loading="lazy"
           class="block h-auto w-full"
           :class="isFramed ? FRAMED_CLASS : UNFRAMED_CLASS"
-        >
+        />
       </button>
     </UCarousel>
 
@@ -76,17 +81,13 @@ const scrollNext = () => carouselRef.value?.emblaApi?.scrollNext()
       >
         {{ pad(selectedIndex + 1) }} / {{ pad(screenshots.length) }}
       </span>
-      <div class="flex items-center gap-1.5">
-        <button
+      <!-- Too small to tap: the arrows and the screenshots themselves handle navigation -->
+      <div aria-hidden="true" class="flex items-center gap-1.5">
+        <span
           v-for="(screenshot, index) in screenshots"
           :key="screenshot.src"
-          type="button"
-          :aria-label="`Show screen ${index + 1}`"
-          class="
-            h-1.5 cursor-pointer rounded-[3px] transition-[width,background-color] duration-300
-          "
+          class="h-1.5 rounded-[3px] transition-[width,background-color] duration-300"
           :class="index === selectedIndex ? 'w-5.5 bg-frite-400' : 'w-1.5 bg-neutral-700'"
-          @click="scrollTo(index)"
         />
       </div>
       <div class="flex gap-1.5">
@@ -98,7 +99,8 @@ const scrollNext = () => carouselRef.value?.emblaApi?.scrollNext()
           color="neutral"
           variant="outline"
           class="
-            size-10 justify-center rounded-[4px] bg-neutral-950 text-neutral-100 ring-neutral-700
+            size-10 cursor-pointer justify-center rounded-[4px] bg-neutral-950 text-neutral-100
+            ring-neutral-700
             hover:bg-neutral-950 hover:text-frite-400 hover:ring-frite-400
           "
           @click="control.label === 'Previous' ? scrollPrev() : scrollNext()"

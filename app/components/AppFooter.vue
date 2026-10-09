@@ -29,12 +29,21 @@ const year = new Date().getFullYear()
   >
     <template #left>
       <div class="flex items-start gap-3">
-        <img src="~/assets/img/logo-transparent.png" alt="frites.dev logo" class="h-10 w-auto">
-        <p class="text-sm leading-[1.6] text-neutral-500">
+        <NuxtImg
+          src="/logo-transparent.png"
+          alt="frites.dev logo"
+          width="40"
+          height="40"
+          densities="x1 x2"
+          format="webp"
+          loading="lazy"
+          class="h-10 w-auto"
+        />
+        <p class="text-sm leading-[1.6] text-neutral-400">
           © {{ year }} frites.dev SRL — VAT BE1032 412 966
           <br>
           Benoit Vander Stappen —
-          <ULink to="mailto:benoit@frites.dev" raw class="text-neutral-400">
+          <ULink to="mailto:benoit@frites.dev" raw class="underline underline-offset-2">
             benoit@frites.dev
           </ULink>
         </p>
@@ -47,19 +56,19 @@ const year = new Date().getFullYear()
         :key="section.id"
         :to="`/#${section.id}`"
         raw
-        class="text-sm text-neutral-500"
+        class="text-sm text-neutral-400"
       >
         {{ section.label }}
       </ULink>
     </nav>
 
     <template #right>
-      <SocialLinks class="text-neutral-500" icon-class="size-[18px]" />
+      <SocialLinks class="text-neutral-400" icon-class="size-[18px]" />
     </template>
 
     <template #bottom>
       <UContainer>
-        <p class="font-mono text-[11px] tracking-[0.06em] text-neutral-600">
+        <p class="font-mono text-[11px] tracking-[0.06em] text-neutral-400">
           Made with ♥ from 🇧🇪
         </p>
       </UContainer>

@@ -9,13 +9,13 @@ defineOgImage('FriteCustom')
     <AppHeader />
     <main>
       <SectionHero />
-      <SectionWork />
-      <SectionClients v-if="hasSection('clients')" />
-      <SectionAbout />
-      <SectionStack />
-      <SectionContact />
+      <LazySectionWork hydrate-on-visible />
+      <LazySectionClients v-if="hasSection('clients')" hydrate-on-visible />
+      <LazySectionAbout hydrate-on-visible />
+      <LazySectionStack hydrate-on-visible />
+      <LazySectionContact hydrate-on-visible />
     </main>
-    <AppFooter />
+    <LazyAppFooter hydrate-on-visible />
     <SectionNav />
   </div>
 </template>

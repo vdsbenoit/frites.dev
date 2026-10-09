@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/scripts',
     '@nuxt/fonts',
+    '@nuxt/image',
   ],
   css: ['~/assets/css/main.css'],
   eslint: {
@@ -31,6 +32,8 @@ export default defineNuxtConfig({
   ui: {
     // The site is dark only
     colorMode: false,
+    // Generates CSS only for the components in use, instead of all of them
+    experimental: { componentDetection: true },
   },
   fonts: {
     families: [

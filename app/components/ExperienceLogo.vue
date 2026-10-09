@@ -17,13 +17,17 @@ const size = computed(() => ({
     "
     :style="{ backgroundColor: experience.logo.background }"
   >
-    <img
+    <NuxtImg
       v-if="experience.logo.src"
       :src="experience.logo.src"
       :alt="`${experience.company} icon`"
+      :width="experience.logo.size"
+      :height="experience.logo.size"
+      densities="x1 x2"
+      loading="lazy"
       class="object-contain"
       :style="size"
-    >
+    />
     <UIcon
       v-else-if="experience.logo.icon"
       :name="experience.logo.icon"

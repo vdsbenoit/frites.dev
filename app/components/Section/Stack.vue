@@ -9,7 +9,7 @@ import { stack } from '~/data/stack'
         <h3 class="mb-1 text-lg font-semibold text-neutral-100">
           {{ group.title }}
         </h3>
-        <p class="mb-6 text-sm text-neutral-500">
+        <p class="mb-6 text-sm text-neutral-400">
           {{ group.caption }}
         </p>
         <div class="flex flex-wrap gap-x-4.5 gap-y-3.5">

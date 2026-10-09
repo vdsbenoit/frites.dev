@@ -4,7 +4,7 @@ Each layer is rendered twice, one parent-height apart, so the upward loop is sea
 -->
 <script setup lang="ts">
 import { useDebounceFn, useEventListener, whenever } from '@vueuse/core'
-import friteUrl from '~/assets/img/frite-background.png'
+import friteUrl from '~/assets/img/frite-background.svg'
 
 interface Fry {
   top: number

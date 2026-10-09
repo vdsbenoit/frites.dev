@@ -1,16 +1,3 @@
-import badenLogo from '~/assets/img/bb-logo.png'
-import izixLogo from '~/assets/img/izix-logo.png'
-import baden1 from '~/assets/img/projects/baden-1.png'
-import baden2 from '~/assets/img/projects/baden-2.png'
-import baden3 from '~/assets/img/projects/baden-3.png'
-import baden4 from '~/assets/img/projects/baden-4.png'
-import baden5 from '~/assets/img/projects/baden-5.png'
-import izixAccess from '~/assets/img/projects/izix-access.png'
-import izixNewReservation from '~/assets/img/projects/izix-new-reservation.png'
-import izixOpenGate from '~/assets/img/projects/izix-open-gate.png'
-import izixPlanning from '~/assets/img/projects/izix-planning.png'
-import izixProfile from '~/assets/img/projects/izix-profile.png'
-
 export interface Screenshot {
   src: string
   alt: string
@@ -36,7 +23,7 @@ export const projects: Project[] = [
   {
     name: 'Izix',
     meta: 'Parking app · 2025 → now',
-    logo: { background: '#062F40', src: izixLogo, size: 36 },
+    logo: { background: '#062F40', src: '/img/izix-logo.png', size: 36 },
     usage: { count: '25k+', label: 'users, every day' },
     description:
       'A cross-platform mobile app for Izix parking customers, built from scratch. Employees book a spot, see their planning and open the gate from their phone. Ionic and Capacitor, one codebase, iOS and Android.',
@@ -48,11 +35,11 @@ export const projects: Project[] = [
     tags: ['Ionic', 'Capacitor', 'Vue', 'TypeScript'],
     link: { label: 'izix.eu', url: 'https://izix.eu/' },
     screenshots: [
-      { src: izixAccess, alt: 'Izix app — my access' },
-      { src: izixPlanning, alt: 'Izix app — planning' },
-      { src: izixNewReservation, alt: 'Izix app — new reservation' },
-      { src: izixOpenGate, alt: 'Izix app — open gate' },
-      { src: izixProfile, alt: 'Izix app — profile' },
+      { src: '/img/projects/izix-access.png', alt: 'Izix app — my access' },
+      { src: '/img/projects/izix-planning.png', alt: 'Izix app — planning' },
+      { src: '/img/projects/izix-new-reservation.png', alt: 'Izix app — new reservation' },
+      { src: '/img/projects/izix-open-gate.png', alt: 'Izix app — open gate' },
+      { src: '/img/projects/izix-profile.png', alt: 'Izix app — profile' },
     ],
     startIndex: 0,
     isFramed: true,
@@ -60,7 +47,7 @@ export const projects: Project[] = [
   {
     name: 'Baden Battle',
     meta: 'Scores app · 2019 → now',
-    logo: { background: '#ffffff', src: badenLogo, size: 38 },
+    logo: { background: '#ffffff', src: '/img/bb-logo.png', size: 38 },
     usage: { count: '1,000+', label: 'users, one day a year' },
     description:
       'A live scoring app for a one-day event with over a thousand participants. Volunteers report duel results from their phone; teams, sections and circuits update in real time. Running every edition since 2019.',
@@ -72,11 +59,11 @@ export const projects: Project[] = [
     tags: ['Ionic', 'Vue', 'Firebase', 'Firestore'],
     link: { label: 'badenbattle.be', url: 'https://badenbattle.be/' },
     screenshots: [
-      { src: baden1, alt: 'Baden Battle app — score check' },
-      { src: baden2, alt: 'Baden Battle app — schedule' },
-      { src: baden3, alt: 'Baden Battle app — duel detail' },
-      { src: baden4, alt: 'Baden Battle app — team score' },
-      { src: baden5, alt: 'Baden Battle app — group score' },
+      { src: '/img/projects/baden-1.png', alt: 'Baden Battle app — score check' },
+      { src: '/img/projects/baden-2.png', alt: 'Baden Battle app — schedule' },
+      { src: '/img/projects/baden-3.png', alt: 'Baden Battle app — duel detail' },
+      { src: '/img/projects/baden-4.png', alt: 'Baden Battle app — team score' },
+      { src: '/img/projects/baden-5.png', alt: 'Baden Battle app — group score' },
     ],
     startIndex: 1,
     isFramed: true,

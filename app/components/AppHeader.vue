@@ -58,7 +58,15 @@ const menuItems: DropdownMenuItem[] = sections.map(section => ({
           hover:text-inherit
         "
       >
-        <img src="~/assets/img/logo-transparent.png" alt="frites.dev logo" class="size-7.5">
+        <NuxtImg
+          src="/logo-transparent.png"
+          alt="frites.dev logo"
+          width="30"
+          height="30"
+          densities="x1 x2"
+          format="webp"
+          class="size-7.5"
+        />
         <span class="text-[17px] font-bold tracking-[-0.01em]">frites.dev</span>
       </ULink>
     </template>

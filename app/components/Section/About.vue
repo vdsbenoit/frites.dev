@@ -17,14 +17,19 @@ const pad = (value: number) => String(value).padStart(2, '0')
     >
       <div class="flex flex-col items-start gap-4">
         <div class="rounded-[4px] bg-linear-to-br from-neutral-800 to-frite-400 p-px">
-          <img
-            src="~/assets/img/avatar.png"
+          <NuxtImg
+            src="/img/avatar.png"
             alt="Benoit Vander Stappen"
+            width="240"
+            height="241"
+            densities="x1 x2"
+            format="webp"
+            loading="lazy"
             class="
               block w-full max-w-60 rounded-[4px]
               bg-[radial-gradient(circle_at_50%_40%,#454545_0%,#262626_45%,#141414_100%)]
             "
-          >
+          />
         </div>
         <p class="font-mono text-[13px] text-neutral-400">
           @vdsbenoit
@@ -34,7 +39,7 @@ const pad = (value: number) => String(value).padStart(2, '0')
 
       <div class="flex min-w-0 flex-col gap-7">
         <div>
-          <p class="font-mono text-[13px] text-neutral-500">
+          <p class="font-mono text-[13px] text-neutral-400">
             Hi, I am
           </p>
           <h3
@@ -76,7 +81,7 @@ const pad = (value: number) => String(value).padStart(2, '0')
     </div>
 
     <div class="mt-16">
-      <h3 class="mb-4 font-mono text-[11px] tracking-[0.08em] text-neutral-500 uppercase">
+      <h3 class="mb-4 font-mono text-[11px] tracking-[0.08em] text-neutral-400 uppercase">
         How I work
       </h3>
       <div
@@ -102,7 +107,7 @@ const pad = (value: number) => String(value).padStart(2, '0')
     </div>
 
     <div class="mt-16">
-      <h3 class="mb-2 font-mono text-[11px] tracking-[0.08em] text-neutral-500 uppercase">
+      <h3 class="mb-2 font-mono text-[11px] tracking-[0.08em] text-neutral-400 uppercase">
         Track record — select a role for details
       </h3>
       <WorkTimeline />

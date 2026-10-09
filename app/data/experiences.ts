@@ -1,8 +1,3 @@
-import ephecLogo from '~/assets/img/ephec.svg'
-import ibaLogo from '~/assets/img/iba.svg'
-import izixLogo from '~/assets/img/izix-logo.png'
-import fritesLogo from '~/assets/img/logo-transparent.png'
-
 export interface Experience {
   title: string
   company: string
@@ -19,7 +14,7 @@ export const experiences: Experience[] = [
     title: 'Front-end & Mobile Developer',
     company: 'Izix',
     location: 'Brussels',
-    logo: { background: '#062F40', size: 28, src: izixLogo },
+    logo: { background: '#062F40', size: 28, src: '/img/izix-logo.png' },
     from: 2025,
     description:
       'In 2025, I started collaborating with Izix as a front-end and mobile developer. I created a new cross-platform mobile application from scratch for their customers using hybrid technologies such as Ionic and Capacitor.<br /><br />The app is now live on the App Store and Google Play, with more than 25,000 users.',
@@ -28,7 +23,7 @@ export const experiences: Experience[] = [
     title: 'Freelance Software Engineer',
     company: 'frites.dev SRL',
     location: 'Brussels',
-    logo: { background: '#0a0a0a', size: 28, src: fritesLogo },
+    logo: { background: '#0a0a0a', size: 28, src: '/logo-transparent.png' },
     from: 2024,
     description:
       'In 2024, I decided to start working on my own and I created my software development agency: frites.dev SRL. I provide services to businesses in multiple software engineering fields, including mobile app development, cloud and on-premises SaaS implementation.',
@@ -57,7 +52,7 @@ export const experiences: Experience[] = [
     title: 'Software Test Engineer',
     company: 'IBA',
     location: 'Louvain-la-Neuve',
-    logo: { background: '#69BE28', size: 40, src: ibaLogo },
+    logo: { background: '#69BE28', size: 40, src: '/img/iba.svg' },
     from: 2016,
     to: 2018,
     description:
@@ -67,7 +62,7 @@ export const experiences: Experience[] = [
     title: 'Computer Science degree',
     company: 'EPHEC',
     location: 'Louvain-la-Neuve',
-    logo: { background: '#f5f5f5', size: 32, src: ephecLogo },
+    logo: { background: '#f5f5f5', size: 32, src: '/img/ephec.svg' },
     from: 2012,
     to: 2015,
     description:

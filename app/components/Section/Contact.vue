@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { FormSubmitEvent } from '@nuxt/ui'
-import * as z from 'zod'
+import * as z from 'zod/mini'
 import { AlertModal } from '#components'
 
 const MESSAGE_MIN = 60
@@ -10,7 +10,7 @@ const SUBMIT_COOLDOWN_MS = 60000
 const FIELD_UI = {
   label:
     'font-mono text-[11px] font-normal tracking-[0.08em] text-neutral-400 uppercase after:text-frite-400',
-  hint: 'font-mono text-[11px] text-neutral-500',
+  hint: 'font-mono text-[11px] text-neutral-400',
   container: 'mt-[7px]',
 }
 const INPUT_CLASS
@@ -26,13 +26,13 @@ const alertModal = useOverlay().create(AlertModal)
 const contactEmail = useRuntimeConfig().public.contactFormToEmail
 
 const formSchema = z.object({
-  name: z.string().optional(),
-  email: z.email('Invalid email format').nonempty('Email is required'),
-  message: z
-    .string()
-    .nonempty("What's on your mind?")
-    .min(MESSAGE_MIN, 'This is interesting! Please tell me more.')
-    .max(MESSAGE_MAX, "Well, that's very long. Could you summarize it, or email me directly?"),
+  name: z.optional(z.string()),
+  email: z.email('Invalid email format').check(z.minLength(1, 'Email is required')),
+  message: z.string().check(
+    z.minLength(1, "What's on your mind?"),
+    z.minLength(MESSAGE_MIN, 'This is interesting! Please tell me more.'),
+    z.maxLength(MESSAGE_MAX, "Well, that's very long. Could you summarize it, or email me directly?"),
+  ),
 })
 type FormSchema = z.output<typeof formSchema>
 
@@ -105,7 +105,7 @@ async function onSubmit(event: FormSubmitEvent<FormSchema>) {
         v-model:response="captchaResponse"
         v-model:error="captchaError"
         class="rounded-[4px] border border-neutral-800 bg-surface p-[clamp(20px,5vw,32px)]"
-        notice-class="mt-[18px] text-xs leading-[1.5] text-neutral-500"
+        notice-class="mt-[18px] text-xs leading-[1.5] text-neutral-400"
       >
         <UForm
           :schema="formSchema"
@@ -165,7 +165,7 @@ async function onSubmit(event: FormSubmitEvent<FormSchema>) {
 
       <div class="overflow-hidden rounded-[4px] border border-neutral-800">
         <div class="bg-surface p-[clamp(20px,5vw,32px)]">
-          <p class="font-mono text-[11px] tracking-[0.08em] text-neutral-500 uppercase">
+          <p class="font-mono text-[11px] tracking-[0.08em] text-neutral-400 uppercase">
             Or skip the form
           </p>
           <ULink

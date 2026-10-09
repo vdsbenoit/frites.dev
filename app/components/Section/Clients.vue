@@ -48,7 +48,7 @@ function initials(name: string) {
             }"
             :ui="{
               name: 'text-sm font-semibold text-neutral-100',
-              description: 'font-mono text-[11px] text-neutral-500',
+              description: 'font-mono text-[11px] text-neutral-400',
               avatar: 'size-9 rounded-[4px] bg-neutral-800 text-[13px]',
             }"
           />

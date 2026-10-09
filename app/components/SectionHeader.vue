@@ -26,7 +26,7 @@ withDefaults(
     <span
       v-if="label"
       class="
-        ml-auto font-mono text-[11px] tracking-[0.08em] whitespace-nowrap text-neutral-500 uppercase
+        ml-auto font-mono text-[11px] tracking-[0.08em] whitespace-nowrap text-neutral-400 uppercase
       "
     >
       {{ label }}

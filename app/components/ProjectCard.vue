@@ -23,20 +23,25 @@ const logoSize = computed(() => props.project.logo.size ?? 32)
             "
             :style="{ backgroundColor: project.logo.background }"
           >
-            <img
+            <NuxtImg
               v-if="project.logo.src"
               class="max-w-none shrink-0"
               :src="project.logo.src"
               :alt="`${project.name} logo`"
+              :width="logoSize"
+              :height="logoSize"
+              densities="x1 x2"
+              format="webp"
+              loading="lazy"
               :style="{ width: `${logoSize}px`, height: `${logoSize}px` }"
-            >
+            />
             <template v-else>{{ project.logo.text }}</template>
           </span>
           <div>
             <h3 class="text-[22px] font-bold tracking-[-0.01em]">
               {{ project.name }}
             </h3>
-            <p class="mt-0.5 font-mono text-[11px] tracking-[0.06em] text-neutral-500 uppercase">
+            <p class="mt-0.5 font-mono text-[11px] tracking-[0.06em] text-neutral-400 uppercase">
               {{ project.meta }}
             </p>
           </div>
@@ -46,7 +51,7 @@ const logoSize = computed(() => props.project.logo.size ?? 32)
           <span class="text-lg font-bold tracking-[-0.01em] text-frite-400">
             {{ project.usage.count }}
           </span>
-          <span class="font-mono text-[11px] tracking-[0.06em] text-neutral-500 uppercase">
+          <span class="font-mono text-[11px] tracking-[0.06em] text-neutral-400 uppercase">
             {{ project.usage.label }}
           </span>
         </p>
