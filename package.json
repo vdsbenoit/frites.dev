@@ -21,7 +21,7 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
+    "@emailjs/browser": "^5.0.2",
     "@nuxt/test-utils": "^4.3.3",
     "@vueuse/components": "^15.0.0",
     "@vueuse/core": "^15.0.0",
