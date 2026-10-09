@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
+    },
+    {
+      "name": "static",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "npm run generate && python3 -m http.server 3001 --directory .output/public"],
+      "port": 3001
     }
   ]
 }
